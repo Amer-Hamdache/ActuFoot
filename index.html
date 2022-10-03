@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actu FOOT</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>Actu</span>FOOT</a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#infos">infos</a>
+        <a href="#àpropos">à propos</a>
+        <a href="#contact">contact</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+    </div>
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="Recherche par nom de pays : Qatar...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- login form container  -->
+
+<div class="login-form-container">
+
+    <i class="fas fa-times" id="form-close"></i>
+
+    <form action="">
+        <h3>Se connecter</h3>
+        <input type="email" class="box" placeholder="entrez votre mail">
+        <input type="password" class="box" placeholder="entrez votre mot de passe">
+        <input type="submit" value="Connecte-toi maintenant" class="btn">
+        <input type="checkbox" id="remember">
+        <label for="remember">s'en souvenir</label>
+        <p>mot de passe oublié? <a href="#">Cliquez ici</a></p>
+        <p>vous n'avez pas de compte ?? <a href="#">s'inscrire</a></p>
+    </form>
+
+</div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Coupe du Monde <span>QATAR 2022</span></h3>
+        <p>Vivez toutes l'actualité avec Actu FOOT</p>
+        <a href="#Time" class="btn">C'est Partie !</a>
+    </div>
+
+
+
+    <div class="video-container">
+        <video src="images/vid.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- Time section starts  -->
+<section class="Time" id="Time">
+ <div class="content">
+
+    <h3 class="Title">Ça commence bientôt !</h3>
+    <div class="count-down">
+        <div class="box">
+          <h3 id="days"></h3>
+          <p>jours</p>
+        </div>
+  
+        <div class="box">
+          <h3 id="hours"></h3>
+          <p>heurs</p>
+        </div>
+  
+        <div class="box">
+          <h3 id="minutes"></h3>
+          <p>minutes</p>
+        </div>
+  
+        <div class="box">
+          <h3 id="seconds"></h3>
+          <p>secondes</p>
+        </div>
+    </div>
+</div> 
+  
+</section>
+
+<script>
+
+    // count down part
+
+    let counteDate = new Date('nov 21, 2022 00:00:00').getTime();
+
+    function countDown(){
+
+        let now = new Date().getTime();
+        gap = counteDate - now;
+
+        let seconds = 1000;
+        let minutes = seconds * 60;
+        let hours = minutes * 60;
+        let days = hours * 24;
+
+        let d = Math.floor(gap / (days));
+        let h = Math.floor((gap % (days)) / (hours));
+        let m = Math.floor((gap % (hours)) / (minutes));
+        let s = Math.floor((gap % (minutes)) / (seconds));
+
+        document.getElementById('days').innerText = d;
+        document.getElementById('hours').innerText = h;
+        document.getElementById('minutes').innerText = m;
+        document.getElementById('seconds').innerText = s;
+
+    }
+
+    setInterval(function(){
+        countDown();
+    },1000)
+
+
+</script>
+<!-- Time section ends -->
+
+<!-- category section starts -->
+
+<section class="category">
+
+ 
+    <div class="swiper category-slider">
+ 
+    <div class="swiper-wrapper">
+ 
+    <a href="#" class="swiper-slide slide">
+       <img src="images/Qatar-icon.png" alt="">
+       <h3>QATAR</h3>
+    </a>
+ 
+    <a href="#" class="swiper-slide slide">
+       <img src="images/angleterre-icon.png" alt="">
+       <h3>Angleterre</h3>
+    </a>
+ 
+    <a href="#" class="swiper-slide slide">
+       <img src="images/argentine-icon.png" alt="">
+       <h3>Argentine</h3>
+    </a>
+ 
+    <a href="#" class="swiper-slide slide">
+       <img src="images/france-icon.png" alt="">
+       <h3>France</h3>
+    </a>
+ 
+ 
+    <a href="#" class="swiper-slide slide">
+       <img src="images/spain-icon.png" alt="">
+       <h3>Espagne</h3>
+    </a>
+ 
+    <a href="#" class="swiper-slide slide">
+        <img src="images/belgium-icon.png" alt="">
+        <h3>Belgique</h3>
+     </a>
+
+     
+     <a href="#" class="swiper-slide slide">
+        <img src="images/brasil-icon.png" alt="">
+        <h3>Brésil</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/portugal-icon.png" alt="">
+        <h3>Portugal</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/paysbas-icon.png" alt="">
+        <h3>Pays-bas</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/EtatUnis-icon.png" alt="">
+        <h3>USA</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/mexique-icon.png" alt="">
+        <h3>Mexique</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/danemark-icon.png" alt="">
+        <h3>Danemark</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/allemagne-icon.png" alt="">
+        <h3>Allemagne</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/croatie-icon.png" alt="">
+        <h3>Croatie</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/suisse-icon.png" alt="">
+        <h3>Suisse</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/uruguay-icon.png" alt="">
+        <h3>Uruguay</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/senegal-icon.png" alt="">
+        <h3>Sénegal</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/equateur-icon.png" alt="">
+        <h3>Equateur</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/iran-icon.png" alt="">
+        <h3>Iran</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/pdg-icon.png" alt="">
+        <h3>Pays de Galles</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/pologne-icon.png" alt="">
+        <h3>Pologne</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/arabie saoudite-icon.png" alt="">
+        <h3>Arabie Saoudite</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/tunisie-icon.png" alt="">
+        <h3>Tunisie</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/australie-icon.png" alt="">
+        <h3>Australie</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/Japan-icon.png" alt="">
+        <h3>Japan</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/costa rica-icon.png" alt="">
+        <h3>Costa Rica</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/maroc-icon.png" alt="">
+        <h3>Maroc</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/Canada-icon.png" alt="">
+        <h3>Canada</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/serbia-icon.png" alt="">
+        <h3>Serbie</h3>
+     </a>
+ 
+     <a href="#" class="swiper-slide slide">
+        <img src="images/cameroune-icon.png" alt="">
+        <h3>Cameroun</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/corée sud-icon.png" alt="">
+        <h3>Corée du Sud</h3>
+     </a>
+
+     <a href="#" class="swiper-slide slide">
+        <img src="images/ghana-icon.png" alt="">
+        <h3>Ghana</h3>
+     </a>
+    </div>
+ 
+    <div class="swiper-pagination"></div>
+ 
+    </div>
+ 
+ </section>
+
+ <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+
+var swiper = new Swiper(".home-slider", {
+   loop:true,
+   spaceBetween: 20,
+   pagination: {
+      el: ".swiper-pagination",
+      clickable:true,
+    },
+});
+
+ var swiper = new Swiper(".category-slider", {
+   loop:true,
+   spaceBetween: 20,
+   pagination: {
+      el: ".swiper-pagination",
+      clickable:true,
+   },
+   breakpoints: {
+      0: {
+         slidesPerView: 2,
+       },
+      650: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+   },
+});
+
+</script>
+
+
+ <!-- category section ends -->
+
+<!-- stades section starts  -->
+
+<section class="packages" id="packages">
+
+    <h1 class="heading">
+        <span>s</span>
+        <span>t</span>
+        <span>a</span>
+        <span>d</span>
+        <span>e</span>
+        <span>s</span>
+
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/Khalifa International Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Al Waab St, Doha, Qatar </h3>
+                <p>Khalifa International Stadium</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/Al-Bayt Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Al-Khor, Qatar </h3>
+                <p>Al-Bayt Stadium</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/Al-Janoub Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Al-Wakrah, Qatar </h3>
+                <p>Al-Janoub Stadium</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/Education City Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Doha, Qatar </h3>
+                <p>Education City Stadium</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/Ahmed bin Ali Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Ahmed bin Ali Stadium </h3>
+                <p>Al Rayyan, Qatar</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/Al-Thumama Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Doha, Qatar </h3>
+                <p>Al-Thumama Stadium</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/Ras Abu Aboud Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Doha, Qatar </h3>
+                <p>Ras Abu Aboud Stadium</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/Lusail Iconic Stadium.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Lusail, Qatar </h3>
+                <p>Lusail Iconic Stadium</p>
+
+                <a href="https://fr.hotels.com/go/qatar/qatar-guide-stades" class="btn">En savoir plus</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- stades section ends -->
+
+
+
+
+
+
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+    
+    <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/contact.jpg" alt="">
+        </div>
+
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="nom">
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="numéro">
+                <input type="text" placeholder="sujet">
+            </div>
+            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn" value="Envoyez">
+        </form>
+
+    </div>
+    
+</section>
+
+<!-- contact section ends -->
+
+
+<!-- footer section  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>à propos</h3>
+            <p>ActuFOOT est une société de médias de football basée en Algérie. Ce site  propose l'actualité footbalistique quotidienne et toutes les informations concernant la coupe du monde 2022 au QATAR.</p>
+        </div>
+        <div class="box">
+            <h3>Liens rapides</h3>
+            <a href="#home">Home</a>
+            <a href="#infos">infos</a>
+            <a href="#àpropos">à propos</a>
+            <a href="#contact">contact</a>
+        </div>
+        <div class="box">
+            <h3>localisation</h3>
+            <a href="#">Algerie</a>
+        </div>
+        <div class="box">
+            <h3>Suivez-nous</h3>
+            <a href="#">facebook</a>
+            <a href="#">instagram</a>
+            <a href="#">twitter</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> Copyright &copy; ActuFOOT Tous droits réservés 2022</h1>
+    
+
+</section>
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+</body>
+</html>
